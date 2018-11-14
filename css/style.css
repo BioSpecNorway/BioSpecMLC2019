@@ -68,9 +68,15 @@ div.sched-row {
 }
 
 /* Committee list min height too big*/
-.collection#committee-list{
+.collection#committee-list, .collection#topics-list{
   border: none;
 }
+
+.collection#topics-list .collection-item{
+  padding: 0px;
+  border-bottom: none;
+}
+
 .collection#committee-list .collection-item.avatar {
   min-height: 50px;
 }
