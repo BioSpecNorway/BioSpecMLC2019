@@ -11,6 +11,11 @@ nav .brand-logo {
   color: #444;
 }
 
+@media only screen and (max-width: 500px) {
+  .hide-on-very-small-only{
+    display: none !important; } 
+}
+
 p {
   line-height: 2rem;
 }
