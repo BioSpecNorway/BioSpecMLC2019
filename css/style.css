@@ -73,6 +73,14 @@ div.sched-row {
   outline: none;
 }
 
+/* Committee list min height too big*/
+.collection#committee-list{
+  border: none;
+}
+.collection#committee-list .collection-item.avatar {
+  min-height: 50px;
+}
+
 /* 400 px swipeable */
 /* https://github.com/Dogfalo/materialize/issues/4159 */
 /* .tabs-content.carousel .carousel-item { height:auto; } */

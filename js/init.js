@@ -2,11 +2,11 @@
   $(function () {
 
     $('.sidenav').sidenav();
-    $('.parallax').parallax();
+    // $('.parallax').parallax();
 
-    $(document).ready(function () {
-      $('.collapsible').collapsible();
-    });
+    // $(document).ready(function () {
+    //   $('.collapsible').collapsible();
+    // });
 
     /* 400 px swipeable */
     /* https://github.com/Dogfalo/materialize/issues/4159 */
@@ -30,8 +30,10 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   M.Tabs.init(document.getElementById('schedule-tabs'), { swipeable: false, duration: 60 }).select('monday')
+  M.Tabs.init(document.getElementById('committee-tabs'), { swipeable: false, duration: 60 }).select('sci-com')
 
   //document.querySelector('.tabs-content.carousel').style.height = window.innerHeight + "px";
+  M.Parallax.init(document.querySelectorAll('.parallax'), {});
 
   M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
 });
