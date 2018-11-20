@@ -75,6 +75,11 @@ div.sched-row {
 .collection#topics-list .collection-item{
   padding: 0px;
   border-bottom: none;
+  align-items: normal;
+}
+
+.collection#topics-list .collection-item .material-icons{
+  margin-top: -2px;
 }
 
 .collection#committee-list .collection-item.avatar {
