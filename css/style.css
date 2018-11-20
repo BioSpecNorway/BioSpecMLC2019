@@ -84,3 +84,12 @@ div.sched-row {
 /* 400 px swipeable */
 /* https://github.com/Dogfalo/materialize/issues/4159 */
 /* .tabs-content.carousel .carousel-item { height:auto; } */
+
+/* footer */
+.page-footer{
+  padding-top: 0px;
+}
+
+.page-footer .row{
+  margin-bottom: 0px;
+}
