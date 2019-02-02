@@ -20,6 +20,30 @@ p {
   line-height: 2rem;
 }
 
+/* Speaker Carousel */
+#speakers-carousel.carousel {
+  height: 450px;
+}
+
+#speakers-carousel .carousel-item {
+  color: rgba(0, 0, 0, 0.87);
+  height: 430px;
+  width: 250px;
+}
+
+/* indicators of speaker carousel */
+
+#speakers-carousel.carousel .indicators .indicator-item.active {
+  background-color: rgb(44, 41, 41);
+}
+
+#speakers-carousel.carousel .indicators .indicator-item {
+  background-color: rgba(44, 41, 41, 0.5);
+  margin: 2px 4px;
+}
+
+/* Side Navigation */
+
 .sidenav-trigger {
   color: #26a69a;
 }

@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
   M.Parallax.init(document.querySelectorAll('.parallax'), {});
 
   M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
+
+  var speakers_carousel = M.Carousel.init(document.getElementById('speakers-carousel'), {shift: 100, numVisible: 3, indicators: true});
+  speakers_carousel.set(2);
 });
 
 // var instance = M.Tabs.init(el, options);
