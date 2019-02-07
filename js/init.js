@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
   M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
 
   var speakers_carousel = M.Carousel.init(document.getElementById('speakers-carousel'), {shift: 100, numVisible: 3, indicators: true});
-  speakers_carousel.set(2);
+  speakers_carousel.set(3);
 });
 
 // var instance = M.Tabs.init(el, options);
