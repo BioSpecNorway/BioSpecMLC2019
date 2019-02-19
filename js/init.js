@@ -29,8 +29,8 @@
 // }
 
 document.addEventListener('DOMContentLoaded', function () {
-  M.Tabs.init(document.getElementById('schedule-tabs'), { swipeable: false, duration: 60 }).select('monday')
-  M.Tabs.init(document.getElementById('committee-tabs'), { swipeable: false, duration: 60 }).select('sci-com')
+  M.Tabs.init(document.getElementById('schedule-tabs'), { swipeable: false, duration: 60 })
+  M.Tabs.init(document.getElementById('committee-tabs'), { swipeable: false, duration: 60 })
 
   //document.querySelector('.tabs-content.carousel').style.height = window.innerHeight + "px";
   M.Parallax.init(document.querySelectorAll('.parallax'), {});
