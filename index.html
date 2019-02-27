@@ -40,7 +40,7 @@
         <li><a href="#subscribe">Subscribe</a></li>
       </ul>
       <ul>
-      <li><a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> </li>
+        <li><a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> </li>
       </ul>
     </div>
   </nav>
@@ -536,85 +536,153 @@
     </div>
   </div>
 
-  <!-- Registration http://formspree.io/biospec-workshop@nmbu.no -->
+  <!-- Registration -->
   <div id="registration" class="container">
     <div class="section">
       <div class="row">
         <div class="col s12">
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4 class="teal-text center">Registration</h4>
-          Please, fill in the <a href="docs/registration_form.docx" target="_blank"> Registration Form </a> and send
-          it to the <b> email: biospec-workshop@nmbu.no </b> <br>
-          <br>
-          In order to submit the abstract for oral or poster presentation, please use the following <a href="docs/abstract_template.docx">
-            Abstract Template
-          </a> and send it to the <b> email: biospec-workshop@nmbu.no </b> <br>
-
           <div class="row">
-            <div class="col m6 s12">
-              <h5 class="teal-text text-lighten-2 center"> Payment Method </h5>
+            <form class="col s12" action="#" method="POST">
+              <!-- PERSONAL -->
+              <h5 class="teal-text text-lighten-2 left-align">Personal</h5>
+              <!-- SEX -->
+              <div class="row left-align" style="margin-bottom: 0px">
+                <label class="col m2 s6">
+                  <input name="sex" type="radio" required />
+                  <span>Mr</span>
+                </label>
+                <label class="col m2 s6">
+                  <input name="sex" type="radio" />
+                  <span>Mrs</span>
+                </label>
+              </div>
+              <!-- NAME -->
+              <div class="row" style="margin-bottom: 0px">
+                <div class="input-field col m6 s12">
+                  <input id="first_name" type="text" class="validate" name="first_name" required>
+                  <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col m6 s12">
+                  <input id="last_name" type="text" class="validate" name="last_name" required>
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+              <!-- EMAIL\TEL -->
+              <div class="row" style="margin-bottom: 0px">
+                <div class="input-field col m6 s12">
+                  <input id="email" type="email" class="validate" name="email" required>
+                  <label for="email">Email</label>
+                </div>
+                <div class="input-field col m6 s12">
+                  <input id="telephone" type="tel" class="validate" pattern="\+\d+ \(\d+\) \d+" name="telephone"
+                    required>
+                  <label for="telephone">Telephone (Format: +999 (99) 9999999)</label>
+                </div>
+              </div>
+              <!-- ORGANIZATION INFO -->
+              <h5 class="teal-text text-lighten-2 left-align">Organization</h5>
+              <div class="input-field">
+                <input id="organization" type="text" name="organization" required>
+                <label for="organization">University/Organization/Company</label>
+              </div>
+              <div class="input-field">
+                <input id="address" type="text" name="address" required>
+                <label for="address">Address</label>
+              </div>
+              <div class="input-field">
+                <input id="invoice_address" type="text" name="invoice_address" required>
+                <label for="invoice_address">Complete Invoice Address (i.e your University/Organization/Company)</label>
+              </div>
+              <!-- FEES -->
+              <h5 class="teal-text text-lighten-2 left-align">Conference Fees</h5>
+              Registration Fees / Includes accommodation, lunches, dinner and proceedings.
+              <!-- SUBMIT -->
+              <div>
+                <input type=”hidden” class="hide" name="_next" value="https://biospecnorway.github.io/BioSpecMLC2019/thanks.html" />
+                <button class="btn waves-effect waves-light" type="submit">
+                  Submit <i class="material-icons right">send</i>
+                </button>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col m6 s12">
+                <h5 class="teal-text text-lighten-2 center"> Payment Method </h5>
 
-              Payments should be made by bank transfer at:
+                Payments should be made by bank transfer at:
 
-              <div class="center" style="width: 80%">
-                <table>
-                  <tbody>
-                    <tr>
-                      <td> Name </td>
-                      <td>DNB Bank ASA </td>
-                    </tr>
-                    <tr>
-                      <td> Account owner </td>
-                      <td> Norwegian University of Life Sceinces </td>
-                    </tr>
-                    <tr>
-                      <td> Bank code </td>
-                      <td> DNB </td>
-                    </tr>
-                    <tr>
-                      <td> SWIFT code </td>
-                      <td> DNBANOKK </td>
-                    </tr>
-                    <tr>
-                      <td> Account number </td>
-                      <td> 76940512510 </td>
-                    </tr>
-                    <tr>
-                      <td> IBAN </td>
-                      <td> NO8976940512510 </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="center" style="width: 80%">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td> Name </td>
+                        <td>DNB Bank ASA </td>
+                      </tr>
+                      <tr>
+                        <td> Account owner </td>
+                        <td> Norwegian University of Life Sceinces </td>
+                      </tr>
+                      <tr>
+                        <td> Bank code </td>
+                        <td> DNB </td>
+                      </tr>
+                      <tr>
+                        <td> SWIFT code </td>
+                        <td> DNBANOKK </td>
+                      </tr>
+                      <tr>
+                        <td> Account number </td>
+                        <td> 76940512510 </td>
+                      </tr>
+                      <tr>
+                        <td> IBAN </td>
+                        <td> NO8976940512510 </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="red-text"> Note the payment with reference number: 1650026066 </p>
               </div>
 
-              <p class="red-text"> Note the payment with reference number: 1650026066 </p>
-            </div>
+              <div class="col m6 s12">
+                <h5 class="teal-text text-lighten-2 center"> Registration Information </h5>
 
-            <div class="col m6 s12">
-              <h5 class="teal-text text-lighten-2 center"> Registration Information </h5>
+                <ul class="normal-list">
+                  <li>Completed registration & abstracts must be sent as Word documents by
+                    <b>May 1st, 2019</b> to:
+                    biospec-workshop@nmbu.no
 
-              <ul class="normal-list">
-                <li>Completed registration & abstracts must be sent as Word documents by
-                  <b>May 1st, 2019</b> to:
-                  biospec-workshop@nmbu.no
+                  <li>Payment is due before <b>June 1st, 2019</b></li>
 
-                <li>Payment is due before <b>June 1st, 2019</b></li>
+                  <li>Refunds for cancellations: 25% of the registration fees will be
+                    taken if your cancellation is
+                    received
+                    before <b>June 15th, 2015</b>. After this date 100% of the registration fees will be taken in case
+                    of
+                    cancellation</li>
 
-                <li>Refunds for cancellations: 25% of the registration fees will be
-                  taken if your cancellation is
-                  received
-                  before <b>June 15th, 2015</b>. After this date 100% of the registration fees will be taken in case of
-                  cancellation</li>
-
-                <li>For inquiries, please contact biospec-workshop@nmbu.no</li>
-              </ul>
+                  <li>For inquiries, please contact biospec-workshop@nmbu.no</li>
+                </ul>
+              </div>
             </div>
 
           </div>
-
         </div>
-      </div>
 
+      </div>
+    </div>
+  </div>
+
+  <div id="abstract" class="container">
+    <div class="section">
+      <div class="row">
+        <h4 class="teal-text center">Abstract</h4>
+        In order to submit the abstract for oral or poster presentation, please use the following <a href="docs/abstract_template.docx">
+          Abstract Template
+        </a> and send it to the <b> email: biospec-workshop@nmbu.no </b> <br>
+      </div>
     </div>
   </div>
 
