@@ -564,24 +564,23 @@
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4 class="teal-text">Subscribe</h4>
           <div class="row">
-            <form class="col s12" action="http://formspree.io/biospec-workshop@nmbu.no" method="POST">
+              <form id="subscribe-form" class="col s12">
               <div class="row">
                 <div class="input-field col s6">
-                  <input id="first_name" type="text" class="validate" name="FirstName" required>
-                  <label for="first_name">First Name</label>
+                  <input id="subscribe-first-name" type="text" class="validate" name="FirstName" required>
+                  <label for="subscribe-first-name">First Name</label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="last_name" type="text" class="validate" name="LastName" required>
-                  <label for="last_name">Last Name</label>
+                  <input id="subscribe-last-name" type="text" class="validate" name="LastName" required>
+                  <label for="subscribe-last-name">Last Name</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input placeholder="your email" id="email" type="email" class="validate" name="_replyto">
-                  <label for="email">Email to get news</label>
+                  <input id="subscribe-email" type="email" class="validate" name="_replyto">
+                  <label for="subscribe-email">Email</label>
                 </div>
               </div>
-              <input type=”hidden” class="hide" name="_next" value="https://biospecnorway.github.io/BioSpecMLC2019/thanks.html" />
               <button class="btn waves-effect waves-light" type="submit">
                 Submit <i class="material-icons right">send</i>
               </button>

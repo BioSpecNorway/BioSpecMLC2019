@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="origin">
+  <title>BioSpecMLC 2019 | Subscribers</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+</head>
+
+<body>
+
+  <!-- The surrounding HTML is left untouched by FirebaseUI.
+  Your app may use that space for branding, controls and other customizations.-->
+  <h1 class="center teal-text">Subscribers</h1>
+  <div id="firebaseui-auth-container"></div>
+  <div id="loader">Loading...</div>
+
+  <div id="main" class="container" style="display:none">
+    <table>
+      <thead>
+        <tr>
+          <th> # </th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>E-mail</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+
+      </tbody>
+    </table>
+
+    <div class="row">
+        <div class="input-field col s12">
+          <textarea id="emails-to-copy" class="materialize-textarea"></textarea>
+        </div>
+      </div>
+
+    <div class="center section">
+      <button class="btn waves-effect waves-light" onclick="signOut();">Sign Out</button>
+    </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/firebase_init.js"></script>
+  <script src="js/subscribers.js"></script>
+
+</body>
+
+</html>

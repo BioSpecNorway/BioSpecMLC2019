@@ -30,3 +30,33 @@ function register() {
 
     return false;
 };
+
+
+document.getElementById('subscribe-form').addEventListener('submit', subscribe);
+
+function subscribe(e) {
+    e.preventDefault();
+
+    first_name = getInputValueById('subscribe-first-name');
+    last_name = getInputValueById('subscribe-last-name');
+    email = getInputValueById('subscribe-email');
+
+    firestore.collection('subscribers').add({
+        first_name: first_name,
+        last_name: last_name,
+        email: email
+    }).then(
+        function(snapshot) { 
+            M.toast({html: 'Dear ' + first_name + ' ' + last_name + ', You are successfully subscribed!'});
+            document.getElementById('subscribe-form').reset();
+        }).catch(function(error) {
+            console.log('Subscription error ' + error)
+            M.toast({html: 'The error ' + error + ' happens. <br><br> Please, contact us by email biospec-workshop@nmbu.no'});
+        });
+    
+    return false;
+}
+
+function getInputValueById(id){
+    return document.getElementById(id).value;
+}
