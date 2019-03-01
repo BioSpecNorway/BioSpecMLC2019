@@ -110,6 +110,13 @@ div.sched-row {
   min-height: 50px;
 }
 
+/* Registration information */
+/* normal list */
+ul.normal-list:not(.browser-default) > li {
+  list-style-type: disc;
+  margin-top: 5px;
+}
+
 /* 400 px swipeable */
 /* https://github.com/Dogfalo/materialize/issues/4159 */
 /* .tabs-content.carousel .carousel-item { height:auto; } */
