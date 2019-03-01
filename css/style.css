@@ -43,6 +43,9 @@ p {
 }
 
 /* Side Navigation */
+nav a.sidenav-trigger {
+  display: block;
+}
 
 .sidenav-trigger {
   color: #26a69a;
