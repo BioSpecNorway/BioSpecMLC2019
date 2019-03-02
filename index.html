@@ -546,20 +546,18 @@
           <div class="row">
             <form id="registration-form" class="col s12">
               <!-- PERSONAL -->
-              <h5 class="teal-text text-lighten-2 left-align">Personal</h5>
-              <!-- SEX -->
-              <div class="row" style="margin-bottom: 0px">
+              <div class="row">
+                <h5 class="teal-text text-lighten-2 left-align col s12">Personal</h5>
+                <!-- SEX -->
                 <label class="col m2 s6">
                   <input id="registration-male" name="sex" type="radio" value="Male" required />
                   <span>Mr</span>
                 </label>
-                <label class="col m2 s6">
+                <label class="col s6">
                   <input id="registration-female" name="sex" type="radio" value="Female" required />
                   <span>Mrs</span>
                 </label>
-              </div>
-              <!-- NAME -->
-              <div class="row" style="margin-bottom: 0px">
+                <!-- NAME -->
                 <div class="input-field col m6 s12">
                   <input id="registration-first-name" type="text" class="validate" name="first_name" required>
                   <label for="registration-first-name">First Name</label>
@@ -568,9 +566,7 @@
                   <input id="registration-last-name" type="text" class="validate" name="last_name" required>
                   <label for="registration-last-name">Last Name</label>
                 </div>
-              </div>
-              <!-- EMAIL\TEL -->
-              <div class="row" style="margin-bottom: 0px">
+                <!-- EMAIL\TEL -->
                 <div class="input-field col m6 s12">
                   <input id="registration-email" type="email" class="validate" name="email" required>
                   <label for="registration-email">Email</label>
@@ -582,19 +578,21 @@
                 </div>
               </div>
               <!-- ORGANIZATION INFO -->
-              <h5 class="teal-text text-lighten-2 left-align">Organization</h5>
-              <div class="input-field">
-                <input id="registration-organization" type="text" name="organization" required>
-                <label for="registration-organization">University/Organization/Company</label>
-              </div>
-              <div class="input-field">
-                <input id="registration-address" type="text" name="address" required>
-                <label for="registration-address">Address</label>
-              </div>
-              <div class="input-field">
-                <input id="registration-invoice-address" type="text" name="invoice_address" required>
-                <label for="registration-invoice-address">Complete Invoice Address (i.e your
-                  University/Organization/Company)</label>
+              <div class="row">
+                  <h5 class="teal-text text-lighten-2 left-align col s12">Organization</h5>
+                <div class="input-field col s12">
+                  <input id="registration-organization" type="text" name="organization" required>
+                  <label for="registration-organization">University/Organization/Company</label>
+                </div>
+                <div class="input-field col s12">
+                  <input id="registration-address" type="text" name="address" required>
+                  <label for="registration-address">Address</label>
+                </div>
+                <div class="input-field col s12">
+                  <input id="registration-invoice-address" type="text" name="invoice_address" required>
+                  <label for="registration-invoice-address">Complete Invoice Address (i.e your
+                    University/Organization/Company)</label>
+                </div>
               </div>
               <!-- FEES AND MEAL-->
               <div class="row">
