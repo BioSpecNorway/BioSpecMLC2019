@@ -3884,7 +3884,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         var scrollTop = M.getDocumentScrollTop();
         var windowHeight = window.innerHeight;
         var windowBottom = scrollTop + windowHeight;
-        var percentScrolled = (windowBottom - top) / (windowHeight);
+        var percentScrolled = (windowBottom - top) / (containerHeight + windowHeight);
         var parallax = parallaxDist * percentScrolled;
 
         if (!this._enabled) {

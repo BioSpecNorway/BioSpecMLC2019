@@ -66,6 +66,19 @@ nav a.sidenav-trigger {
   width: 100%;
 }
 
+.parallax-header {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+  padding: 4px 8px;
+  margin: 0;
+  /*font: 14px Sans-Serif;*/
+  font: 14px Roboto;
+  font-weight: 500;
+}
+
 .icon-block {
   padding: 0 15px;
 }
