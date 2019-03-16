@@ -43,6 +43,10 @@ p {
 }
 
 /* Side Navigation */
+#nav-mobile {
+  width: 310px; /* to fit long Accommodation and Workshop venue*/
+}
+
 nav a.sidenav-trigger {
   display: block;
 }
