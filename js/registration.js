@@ -8,8 +8,7 @@ function register(e) {
     fee_type = document.querySelector('input[name="fees"]:checked').value;
     fee = 0;
     switch (fee_type){
-        case 'eu-student': fee = 30; break;
-        case 'non-eu-student': fee = 60; break;
+        case 'student': fee = 60; break;
         case 'academic': fee = 100; break;
         case 'non-academic': fee = 150; break;
     }

@@ -149,3 +149,7 @@ ul.normal-list:not(.browser-default) > li {
 .page-footer .row{
   margin-bottom: 0px;
 }
+
+.no-mar-bot{
+  margin-bottom: 0px;
+}
