@@ -77,20 +77,25 @@ function createCell(tag, text) {
     return cell;
 }
 
-function createBooleanCell(tag, value) {
+function createIcon(icon_name, classes=''){
     var icon = document.createElement('i');
 
+    icon.className = "material-icons " + classes;
+    icon.appendChild(document.createTextNode(icon_name));
+
+    return icon;
+}
+
+function createBooleanCell(tag, value) {
+    var cell = document.createElement(tag);
+
     if (value){
-        icon.className = "material-icons teal-text";
-        icon.appendChild(document.createTextNode('done'));
+        cell.appendChild(createIcon('done', 'teal-text'));
     }
     else{
-        icon.className = "material-icons";
-        icon.appendChild(document.createTextNode('clear'));
+        cell.appendChild(createIcon('clear'));
     }
 
-    cell = document.createElement(tag);
-    cell.appendChild(icon);
     return cell;
 }
 
