@@ -42,7 +42,8 @@ function addRegistrantsToTable() {
 function createRow(obj, index, accepted) {
     var row = document.createElement('tr');
     row.appendChild(createCell('td', index.toString()));
-    row.appendChild(createBooleanCell('td', accepted));
+    // row.appendChild(createBooleanCell('td', accepted));
+    row.appendChild(createCellNode('td', createIcon('warning', 'orange-text')));
     row.appendChild(createCell('td', obj.first_name));
     row.appendChild(createCell('td', obj.last_name));
     row.appendChild(createCell('td', obj.sex));
@@ -74,6 +75,12 @@ function createRow(obj, index, accepted) {
 function createCell(tag, text) {
     var cell = document.createElement(tag);
     cell.appendChild(document.createTextNode(text));
+    return cell;
+}
+
+function createCellNode(tag, node){
+    var cell = document.createElement(tag);
+    cell.appendChild(node);
     return cell;
 }
 
