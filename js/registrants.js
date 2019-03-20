@@ -72,7 +72,7 @@ function createRow(obj, index, accepted) {
 }
 
 function createCell(tag, text) {
-    cell = document.createElement(tag);
+    var cell = document.createElement(tag);
     cell.appendChild(document.createTextNode(text));
     return cell;
 }
