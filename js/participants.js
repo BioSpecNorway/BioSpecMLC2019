@@ -52,7 +52,7 @@ function createRow(obj, index, accepted) {
     var row = document.createElement('tr');
     row.appendChild(createCell('td', index.toString()));
     // row.appendChild(createBooleanCell('td', accepted));
-    row.appendChild(createCellNode('td', createIcon('warning', 'orange-text')));
+    // row.appendChild(createCellNode('td', createIcon('warning', 'orange-text')));
     row.appendChild(createCell('td', obj.first_name));
     row.appendChild(createCell('td', obj.last_name));
     row.appendChild(createCell('td', obj.sex));
@@ -62,7 +62,7 @@ function createRow(obj, index, accepted) {
         row.appendChild(createBooleanCell('td', obj.abstract));
     }
     else {
-        row.appendChild(createCellNode('td', createIcon('warning', 'orange-text')));
+        row.appendChild(createCellNode('td', createIcon('warning', 'orange-text'), 'center'));
     }
 
     // poster
@@ -70,15 +70,15 @@ function createRow(obj, index, accepted) {
         row.appendChild(createBooleanCell('td', obj.poster));
     }
     else{
-        row.appendChild(createCellNode('td', createIcon('warning', 'orange-text')));
+        row.appendChild(createCellNode('td', createIcon('warning', 'orange-text'), 'center'));
     }
     
     row.appendChild(createCell('td', obj.email));
     row.appendChild(createCell('td', obj.telephone));
     
-    row.appendChild(createCell('td', obj.organization));
-    row.appendChild(createCell('td', obj.address));
-    row.appendChild(createCell('td', obj.invoice_address));
+    row.appendChild(createCell('td', obj.organization, true));
+    row.appendChild(createCell('td', obj.address, true));
+    row.appendChild(createCell('td', obj.invoice_address, true));
 
     row.appendChild(createCell('td', obj.fee_type));
     row.appendChild(createCell('td', obj.fee));
@@ -91,21 +91,25 @@ function createRow(obj, index, accepted) {
     row.appendChild(createBooleanCell('td', obj.dinner_tuesday));
     row.appendChild(createBooleanCell('td', obj.dinner_vegetarian));
 
-    row.appendChild(createCell('td', obj.food_special));
+    row.appendChild(createCell('td', obj.food_special, true));
 
     row.appendChild(createBooleanCell('td', obj.minsk_tour));
     return row;
 }
 
-function createCell(tag, text) {
+function createCell(tag, text, long_text) {
     var cell = document.createElement(tag);
     cell.appendChild(document.createTextNode(text));
+    if (long_text){
+        cell.className = 'normalWrap'
+    }
     return cell;
 }
 
-function createCellNode(tag, node){
+function createCellNode(tag, node, classes=''){
     var cell = document.createElement(tag);
     cell.appendChild(node);
+    cell.className = classes;
     return cell;
 }
 
@@ -128,6 +132,7 @@ function createBooleanCell(tag, value) {
         cell.appendChild(createIcon('clear'));
     }
 
+    cell.className = 'center';
     return cell;
 }
 

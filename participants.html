@@ -14,17 +14,17 @@
 
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <style>
-    table,
-    th,
-    td {
-      border: 1px solid black;
-    }
-
     table {
         display: block;
-        overflow: auto;
+        overflow: visible;
         white-space: nowrap;
     } 
+    th {
+      text-align: center;
+    }
+    td.normalWrap{
+      white-space: normal;
+    }
   </style>
 </head>
 
@@ -36,12 +36,12 @@
   <div id="firebaseui-auth-container"></div>
   <div id="loader">Loading...</div>
 
-  <div id="main" class="container" style="display:none">
-    <table class="centered highlight">
+  <div id="main" style="display:none; margin: 20px">
+    <table class="highlight">
       <thead>
         <tr>
           <th> # </th>
-          <th>Accepted</th>
+          <!-- <th>Accepted</th> -->
           <th>First Name</th>
           <th>Last Name</th>
           <th>Sex</th>
