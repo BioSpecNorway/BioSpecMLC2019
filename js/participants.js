@@ -32,6 +32,45 @@ function compareDocs(a, b){
     return a.first_name.localeCompare(b.first_name);
 }
 
+summary_info = {
+    'student': 0,
+    'academic': 0,
+    'non-academic': 0,
+    'total': 0,
+    'total-money': 0,
+    'abstracts': 0,
+    'posters': 0,
+    'lunch-mon': 0,
+    'lunch-tue': 0,
+    'lunch-wed': 0,
+    'lunch-veg': 0,
+    'dinner-tue': 0,
+    'dinner-veg': 0,
+    'minsk-tour': 0,
+};
+
+function updateSummaryInfo(doc){
+    summary_info[doc.fee_type]++;
+    summary_info['total-money'] += doc.fee;
+    summary_info['total']++;
+    if (doc.abstract) summary_info['abstracts']++;
+    if (doc.poster) summary_info['posters']++;
+    summary_info['lunch-mon'] += doc.lunch_monday;
+    summary_info['lunch-tue'] += doc.lunch_tuesday;
+    summary_info['lunch-wed'] += doc.lunch_wednesday;
+    summary_info['lunch-veg'] += doc.lunch_vegetarian;
+    summary_info['dinner-tue'] += doc.dinner_tuesday;
+    summary_info['dinner-veg'] += doc.dinner_vegetarian;
+    summary_info['minsk-tour'] += doc.minsk_tour;
+}
+
+function showSummaryInfo(){
+    for (let key in summary_info){
+        let cell = document.getElementById('summary-' + key);
+        cell.appendChild(document.createTextNode(summary_info[key]));
+    }
+}
+
 function addRegistrantsToTable() {
     let tbody = document.getElementById('table-body');
     firestore.collection('participants').get().then((querySnapshot) => {
@@ -40,10 +79,12 @@ function addRegistrantsToTable() {
         copy.sort( (a, b) => compareDocs(a.data(), b.data()) );
         
         copy.forEach((doc, i) => {
+            updateSummaryInfo(doc.data());
             tbody.appendChild(createRow(doc.data(), i + 1, false));
             emails += doc.data().email + ' ';
         });
         
+        showSummaryInfo();
         setTextArea(emails);
     });
 }
