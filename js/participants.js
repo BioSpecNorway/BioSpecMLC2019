@@ -11,7 +11,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
 
 function showTable(){
-    var docRef = firestore.collection("users").doc(firebase.auth().currentUser.uid);
+    let docRef = firestore.collection("users").doc(firebase.auth().currentUser.uid);
     // check rights
     docRef.get().then(function(doc) {
         if (doc.exists && doc.data().can_read){
@@ -49,7 +49,7 @@ function addRegistrantsToTable() {
 }
 
 function createRow(obj, index, accepted) {
-    var row = document.createElement('tr');
+    let row = document.createElement('tr');
     row.appendChild(createCell('td', index.toString()));
     // row.appendChild(createBooleanCell('td', accepted));
     // row.appendChild(createCellNode('td', createIcon('warning', 'orange-text')));
@@ -98,7 +98,7 @@ function createRow(obj, index, accepted) {
 }
 
 function createCell(tag, text, long_text) {
-    var cell = document.createElement(tag);
+    let cell = document.createElement(tag);
     cell.appendChild(document.createTextNode(text));
     if (long_text){
         cell.className = 'normalWrap'
@@ -107,14 +107,14 @@ function createCell(tag, text, long_text) {
 }
 
 function createCellNode(tag, node, classes=''){
-    var cell = document.createElement(tag);
+    let cell = document.createElement(tag);
     cell.appendChild(node);
     cell.className = classes;
     return cell;
 }
 
 function createIcon(icon_name, classes=''){
-    var icon = document.createElement('i');
+    let icon = document.createElement('i');
 
     icon.className = "material-icons " + classes;
     icon.appendChild(document.createTextNode(icon_name));
@@ -123,7 +123,7 @@ function createIcon(icon_name, classes=''){
 }
 
 function createBooleanCell(tag, value) {
-    var cell = document.createElement(tag);
+    let cell = document.createElement(tag);
 
     if (value){
         cell.appendChild(createIcon('done', 'teal-text'));
@@ -145,7 +145,7 @@ function signOut(){
     firebase.auth().signOut();
 
     // clear table
-    var tbody = document.getElementById('table-body');
+    let tbody = document.getElementById('table-body');
     while (tbody.firstChild) {
         tbody.removeChild(tbody.firstChild);
     }
@@ -156,9 +156,9 @@ function signOut(){
 
 function signIn(){
     // Initialize the FirebaseUI Widget using Firebase.
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    let ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-    var uiConfig = {
+    let uiConfig = {
         callbacks: {
             signInSuccessWithAuthResult: function (authResult, redirectUrl) {
                 // User successfully signed in.
