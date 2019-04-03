@@ -27,6 +27,8 @@ function register(e) {
         
         fee_type: fee_type,
         fee: fee,
+        abstract: getCheckedById('registration-abstract'),
+        poster: getCheckedById('registration-poster'),
         
         lunch_monday: getCheckedById('registration-lunch-mon'),
         lunch_tuesday: getCheckedById('registration-lunch-tue'),

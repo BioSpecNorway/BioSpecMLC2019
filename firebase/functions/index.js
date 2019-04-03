@@ -68,6 +68,7 @@ function confirmRegistration(participant) {
     \n
     PAYMENT METHOD \n
     -------------------------------------------------\n
+    You can send abstract or poster to our email: biospec-workshop@nmbu.no \n
     Please, find this information at website https://biospecnorway.github.io/BioSpecMLC2019 \n
     \n
     You can contact us by email biospec-workshop@nmbu.no
@@ -112,6 +113,7 @@ function confirmRegistration(participant) {
 
     <p style="color: red"> Note the payment with reference number: 1650026066 </p>
     <br>
+    You can send <a href="https://biospecnorway.github.io/BioSpecMLC2019/#abstract" target="_blank"> abstract </a> or poster to our email: biospec-workshop@nmbu.no <br>
     For more information check <a href="https://biospecnorway.github.io/BioSpecMLC2019/" target="_blank">workshop website</a>. <br>
     For any questions you can contact us by email <b>biospec-workshop@nmbu.no</b>
     `;

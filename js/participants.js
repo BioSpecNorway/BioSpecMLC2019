@@ -47,6 +47,22 @@ function createRow(obj, index, accepted) {
     row.appendChild(createCell('td', obj.first_name));
     row.appendChild(createCell('td', obj.last_name));
     row.appendChild(createCell('td', obj.sex));
+
+    // abstract
+    if (typeof(obj.abstract) != 'undefined'){
+        row.appendChild(createBooleanCell('td', obj.abstract));
+    }
+    else {
+        row.appendChild(createCellNode('td', createIcon('warning', 'orange-text')));
+    }
+
+    // poster
+    if (typeof(obj.abstract) != 'undefined'){
+        row.appendChild(createBooleanCell('td', obj.poster));
+    }
+    else{
+        row.appendChild(createCellNode('td', createIcon('warning', 'orange-text')));
+    }
     
     row.appendChild(createCell('td', obj.email));
     row.appendChild(createCell('td', obj.telephone));
