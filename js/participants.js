@@ -36,6 +36,7 @@ summary_info = {
     'student': 0,
     'academic': 0,
     'non-academic': 0,
+    'covered': 0,
     'total': 0,
     'total-money': 0,
     'abstracts': 0,
