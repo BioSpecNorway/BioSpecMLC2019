@@ -82,7 +82,8 @@ function addRegistrantsToTable() {
         copy.forEach((doc, i) => {
             updateSummaryInfo(doc.data());
             tbody.appendChild(createRow(doc.data(), i + 1, false));
-            emails += doc.data().email + ' ';
+            emails += doc.data().first_name + ' ' + doc.data().last_name + 
+                      ' <' + doc.data().email + '>;\n';
         });
         
         showSummaryInfo();
