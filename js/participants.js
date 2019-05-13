@@ -50,6 +50,8 @@ summary_info = {
     'minsk-tour': 0,
 };
 
+var participants_list = [];
+
 function updateSummaryInfo(doc){
     summary_info[doc.fee_type]++;
     summary_info['total-money'] += doc.fee;
@@ -72,6 +74,56 @@ function showSummaryInfo(){
     }
 }
 
+/*
+ *  This function MUST BE consistent with createRow :(
+ */
+function gatherPariticipantInfo(obj, index){
+    let info = [];
+    info.push(index);
+    info.push(obj.first_name);
+    info.push(obj.last_name);
+    info.push(obj.sex);
+
+    // abstract
+    if (typeof(obj.abstract) != 'undefined'){
+        info.push(obj.abstract);
+    }
+    else {
+        info.push('n/a');
+    }
+
+    // poster
+    if (typeof(obj.abstract) != 'undefined'){
+        info.push(obj.poster);
+    }
+    else{
+        info.push('n/a');
+    }
+    
+    info.push(obj.email);
+    info.push(obj.telephone);
+    
+    info.push(obj.organization);
+    info.push(obj.address);
+    info.push(obj.invoice_address);
+
+    info.push(obj.fee_type);
+    info.push(obj.fee);
+
+    info.push(obj.lunch_monday);
+    info.push(obj.lunch_tuesday);
+    info.push(obj.lunch_wednesday);
+    info.push(obj.lunch_vegetarian);
+
+    info.push(obj.dinner_tuesday);
+    info.push(obj.dinner_vegetarian);
+
+    info.push(obj.food_special);
+
+    info.push(obj.minsk_tour);
+    return info;
+}
+
 function addRegistrantsToTable() {
     let tbody = document.getElementById('table-body');
     firestore.collection('participants').get().then((querySnapshot) => {
@@ -81,6 +133,7 @@ function addRegistrantsToTable() {
         
         copy.forEach((doc, i) => {
             updateSummaryInfo(doc.data());
+            participants_list.push(gatherPariticipantInfo(doc.data(), i + 1));
             tbody.appendChild(createRow(doc.data(), i + 1, false));
             emails += doc.data().first_name + ' ' + doc.data().last_name + 
                       ' <' + doc.data().email + '>;\n';
@@ -196,6 +249,29 @@ function signOut(){
     // hide table block
     document.getElementById('main').style.display = 'none';
 }
+
+function download() {
+    filename = 'participants_table.csv';
+    header = '#;First Name;Last Name;Sex;Abstract;Poster;E-mail;Telephone;Organization;Address;Invoice Address;Fee Type;Fee;Lunch Mon;Tue;We;Vegetarian;Dinner Tue;Vegetarian;Food Special;Minsk Tour';
+    separator = '$3E@#$AT0R';
+    text = '';
+    for (let i = 0; i < participants_list.length; ++i){
+        let info = participants_list[i];
+        text += info.join(separator) + '\n';
+    }
+    text = header + '\n' + text.split(';').join(',').split(separator).join(';');
+
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+  }
 
 function signIn(){
     // Initialize the FirebaseUI Widget using Firebase.
