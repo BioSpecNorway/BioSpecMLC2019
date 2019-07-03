@@ -94,9 +94,15 @@ footer.page-footer {
   margin: 0;
 }
 
+/* SCHEDULE */
 div.sched-row {
   width: 100%;
   margin-bottom: 0px;
+}
+
+span.sched-person{
+  font-size: 12pt;
+  font-weight: 400;
 }
 
 /* Don't show with background active tab */
